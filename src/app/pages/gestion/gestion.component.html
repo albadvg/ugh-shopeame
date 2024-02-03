@@ -1,0 +1,7 @@
+<div>
+    <h2>Creación de producto</h2>
+    <div class="wrapper">
+        <app-formulario (formChange)="getData($event)" [editionMode]="editionMode"></app-formulario>
+        <app-producto [product]="gestionProduct"></app-producto>
+    </div>
+</div>

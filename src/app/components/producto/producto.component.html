@@ -1,0 +1,28 @@
+<div class="product">
+    <div class="product-top">
+        <img src="{{product.image}}" alt="" class="product-top__img">
+    </div>
+
+    <div class="product-info">
+        <p class="product-info__name">{{product.name}}</p>
+        <p class="product-info__description">{{product.author}}</p>
+        @if (product.price) {
+            <p class="product-info__price">{{product.price}}€</p>
+        }
+        <div class="product-info-btm">
+            <div class="product-info-btm-stars">
+                @if (product.stars) {
+                    <img *ngFor="let star of [].constructor(product.stars); let i = index" src="../../../assets/img/star-full.png" alt="">
+                    <img *ngFor="let star of [].constructor((5 - product.stars)); let i = index" src="../../../assets/img/star-empty.png" alt="">     
+                }
+                <span class="product-info-btm-stars__rating">{{product.stars}}</span>
+            </div>
+    
+            @if(hasEditBtn) {
+                <button class="product-info-btm__btn" (click)="updateClickedProduct(product)" routerLink="/edicion" >Editar</button>
+            }
+    </div>
+    
+        
+    </div>
+</div>

@@ -1,0 +1,56 @@
+.header {
+    &-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+
+        &__logo {
+            width: 220px;
+        }
+
+        &__title {
+            font-family: 'Lumina' , serif;
+            letter-spacing: 10px;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+            font-size: 40px;
+            animation: titleLogoAnimation 2s ease forwards;
+        }
+
+        &__subtitle {
+            letter-spacing: 3px;
+            font-weight: 300;
+        }
+    }
+
+    &-nav {
+        background-color: rgb(58, 45, 37);
+
+        ul {
+            display: flex;
+            justify-content: center;
+            
+            li {
+                transition: all .2s ease;
+                color: white;
+                &:hover {
+                    background-color: white ;
+                    color: black;    
+                }
+                
+                a {
+                    display: block;
+                    padding: 20px 40px;
+
+                }
+            }
+            
+        }
+    }
+}
+
+@keyframes titleLogoAnimation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

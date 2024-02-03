@@ -1,0 +1,8 @@
+<ul>
+    @for(product of productsList; track $index) {
+        <div class="galeria-producto-wrapper">
+            <app-producto [product]="product" [hasEditBtn]="true"></app-producto>
+        </div>
+    }
+</ul>
+<app-paginacion [pageNum]="page" (pageEvent)="updatePage($event)"></app-paginacion>

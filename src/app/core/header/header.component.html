@@ -1,0 +1,21 @@
+<header class="header">
+
+    <div class="header-top">
+        <img src="../../../assets/img/logo4.jpg" alt="" class="header-top__logo">
+        <h1 class="header-top__title">VOLANDEIRA</h1>
+        <ngx-typed-js 
+            [strings]="['LIBROS DE SEGUNDA MANO']"
+            [showCursor]="false"
+            [startDelay]="1000"
+        >
+            <p class="header-top__subtitle typing" #subtitle ></p>
+        </ngx-typed-js>
+    </div>
+    <nav class="header-nav">
+        <ul>
+            <li><a routerLink="/">INICIO</a></li>
+            <li><a routerLink="/productos">LIBROS</a></li>
+            <li><a routerLink="/gestion">GESTIÓN</a></li>
+        </ul>
+    </nav>
+</header>

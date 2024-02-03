@@ -1,0 +1,30 @@
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 50px 0;
+
+    h1 {
+        font-weight: 300;
+    }
+
+    img{
+        width: 350px;
+        // border-radius: 50%;
+    }
+
+    p {
+        text-align: center;
+        max-width: 330px;
+        font-size: 18px;
+        color: gray;
+        line-height: 1.5;
+    }
+
+    span {
+        color: #f7b71e;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+}

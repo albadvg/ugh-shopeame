@@ -1,0 +1,10 @@
+ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.galeria-producto-wrapper {
+    width: clamp(200px, 15%, 300px);
+}

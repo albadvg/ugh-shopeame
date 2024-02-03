@@ -1,0 +1,11 @@
+div {
+    padding: 50px;
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 40px auto;
+        max-width: 800px;
+        gap: 100px;
+    }
+}
