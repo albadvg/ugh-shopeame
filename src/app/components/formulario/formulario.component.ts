@@ -14,13 +14,15 @@ import { RouterLink } from '@angular/router';
 })
 
 export class FormularioComponent {
-  formData:any = {};
-  crudFeedback:any = {};
-
+  
+  @Input() formData:any = {};
+  
   @Input() editionMode!:boolean;
-
+  
   @Output() formChange  = new EventEmitter<any>();
-
+  
+  crudFeedback:any = {};
+  
   constructor(private service:ApiService) {}
 
   emitData() {
@@ -34,7 +36,7 @@ export class FormularioComponent {
   }
 
   updateProduct() {
-    const productId = this.service.defaultProduct._id;
+    const productId = this.service.defaultProduct.id;
     const updateInfo = this.formData;
     console.log(updateInfo);
     this.service.updateProduct(productId, updateInfo).subscribe();
@@ -42,7 +44,7 @@ export class FormularioComponent {
   }
 
   deleteProduct() {
-    const productId = this.service.defaultProduct._id;
+    const productId = this.service.defaultProduct.id;
     console.log(productId);
     this.service.deleteProduct(productId).subscribe();
     this.crudFeedback.msg = 'Producto eliminado con éxito';

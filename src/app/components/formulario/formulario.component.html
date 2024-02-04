@@ -1,22 +1,25 @@
 <div>
     <form [ngClass]="crudFeedback.msg ? 'hidden' : ''">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="name" placeholder="Por ej: Libro presioso" [(ngModel)]="formData.name" (input)="emitData()" required>
+        <label for="nombre">Título</label>
+        <input type="text" id="nombre" name="name" [(ngModel)]="formData.name" (input)="emitData()" required>
         
-        <label for="author">Autor</label>
-        <input type="text" id="autor" name="author" placeholder="Por ej: Fulanita de Tal" [(ngModel)]="formData.author" (input)="emitData()" required>
+        <label for="author">Autoría</label>
+        <input type="text" id="autor" name="author" [(ngModel)]="formData.author" (input)="emitData()" required>
+
+        <label for="author">Descripción</label>
+        <textarea id="autor" name="author"  [(ngModel)]="formData.description" (input)="emitData()" required></textarea>
 
         <label for="precio">Precio</label>
-        <input type="number" id="precio" name="price" placeholder="Por ej: 8.50" min="0" [(ngModel)]="formData.price"  (input)="emitData()" required>
+        <input type="number" id="precio" name="price" min="0" [(ngModel)]="formData.price"  (input)="emitData()" required>
         
         <label for="imagen">Ruta de la imagen</label>
-        <input type="text" id="imagen" name="image" placeholder="Por ej: http://..." [(ngModel)]="formData.image" (input)="emitData()" required>
+        <input type="text" id="imagen" name="image" [(ngModel)]="formData.image" (input)="emitData()" required>
         
         <label for="opiniones">opiniones</label>
-        <input type="number" id="opiniones" name="stars" placeholder="Por ej: 4.5"  max="5" min="0" [(ngModel)]="formData.stars" (input)="emitData()" required>
+        <input type="number" id="opiniones" name="stars"  max="5" min="0" [(ngModel)]="formData.stars" (input)="emitData()" required>
         
         <div>
-            @if(editionMode) {
+            @if(editionMode === true) {
                 <button (click)="updateProduct()">Actualizar</button>
                 <button (click)="deleteProduct()">Eliminar</button>
             } @else {
@@ -28,6 +31,6 @@
 
     <div [ngClass]="crudFeedback.msg ? '' : 'hidden'">
         <h4>{{crudFeedback.msg}}</h4>
-        <button (click)="resetEdition()" routerLink="/productos" >Volver</button>
+        <button (click)="resetEdition()" routerLink="/catalogo" >Volver</button>
     </div>
 </div>

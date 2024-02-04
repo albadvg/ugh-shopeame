@@ -22,7 +22,6 @@ export class ProductoComponent {
   updateClickedProduct = (product:any) => {
     this.product = product;
     this.servicio.defaultProduct = product;
-    console.log(this.servicio.defaultProduct);
   }
   
 }

@@ -4,28 +4,57 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
+    // border: 2px solid red;
+    gap: 10px;
 
     &-top {
-        aspect-ratio: 5/5.5;
+        aspect-ratio: 5/7.5;
+        overflow: hidden;
         &__img {
             height: 100%;
-            object-fit: contain;
+            width: 100%;
+            object-fit: cover;
         }
     }
 
     &-info {
+        
+        &-top {
+            height: 4pc;
 
-        &__name,
-        &__description {
-            line-height: 1.5;
+            &__name {
+                max-height: 3pc;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            &__name,
+            &__description {
+                line-height: 1.5;
+            }
         }
     
-        &__price {
+        &-mid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__price {
             font-weight: 700;
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             margin: 12px 0;
+            }
+
+            &-stars {
+                display: flex;
+                gap: 3px;
+                img {
+                    width: 18px;
+                }
+                &__rating {
+                    margin-left: 10px;
+                }
+            }
         }
     
        &-btm {
@@ -33,23 +62,18 @@
             justify-content: space-between;
             align-items: center;
     
-            &-stars {
-    
-                &__rating {
-                    margin-left: 10px;
-                }
-            }
     
             &__btn {
                 padding: 10px 16px;
                 background-color: white;
-                border: 1px solid #e7bc46;
+                border: 1px solid #cda04b;
                 border-radius: 5px;
                 cursor: pointer;
-    
+                width: 100%;
+                color: #cda04b;
+
                 &:hover {
-                    background-color: #e7bc46;
-                    color: white;
+                    font-weight: bold;
                 }
             }
     }

@@ -4,22 +4,28 @@
     </div>
 
     <div class="product-info">
-        <p class="product-info__name">{{product.name}}</p>
-        <p class="product-info__description">{{product.author}}</p>
-        @if (product.price) {
-            <p class="product-info__price">{{product.price}}€</p>
-        }
-        <div class="product-info-btm">
-            <div class="product-info-btm-stars">
+        <div class="product-info-top">
+            <h4 class="product-info-top__name">{{product.name}}</h4>
+            <p class="product-info-top__description">{{product.author}}</p>
+        </div>
+
+        <div class="product-info-mid">
+            @if (product.price) {
+                <p class="product-info-mid__price">{{product.price}}€</p>
+            }
+
+            <div class="product-info-mid-stars">
                 @if (product.stars) {
-                    <img *ngFor="let star of [].constructor(product.stars); let i = index" src="../../../assets/img/star-full.png" alt="">
-                    <img *ngFor="let star of [].constructor((5 - product.stars)); let i = index" src="../../../assets/img/star-empty.png" alt="">     
+                    <img *ngFor="let star of [].constructor(product.stars); let i = index" src="../../../assets/img/taza-llena.png" alt="">
+                    <img *ngFor="let star of [].constructor((5 - product.stars)); let i = index" src="../../../assets/img/taza-vacia.png" alt="">     
                 }
-                <span class="product-info-btm-stars__rating">{{product.stars}}</span>
+                <span class="product-info-mid-stars__rating">{{product.stars}}</span>
             </div>
+        </div>
+        <div class="product-info-btm">
     
             @if(hasEditBtn) {
-                <button class="product-info-btm__btn" (click)="updateClickedProduct(product)" routerLink="/edicion" >Editar</button>
+                <button class="product-info-btm__btn" (click)="updateClickedProduct(product)" routerLink="/edicion" ><p>Editar</p></button>
             }
     </div>
     

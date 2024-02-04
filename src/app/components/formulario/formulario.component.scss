@@ -11,12 +11,15 @@ div{
             margin-bottom: 8px;
         }
 
-        input {
+        input,
+        textarea {
             padding: 8px;
             border-radius: 5px;
             border: 1px solid gray;
             width: 100%;
             margin-bottom: 14px;
+            font-family: inherit;
+            font-size: 13px;
         }
         
         div {
